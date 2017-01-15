@@ -39,7 +39,7 @@ void Scenario3::PickFolderButton_Click(Object^ sender, RoutedEventArgs^ e)
     OutputTextBlock->Text = "";
 
     FolderPicker^ folderPicker = ref new FolderPicker();
-    folderPicker->SuggestedStartLocation = PickerLocationId::Desktop;
+    folderPicker->SuggestedStartLocation = PickerLocationId::DocumentsLibrary;
 
     // Users expect to have a filtered view of their folders depending on the scenario.
     // For example, when choosing a documents folder, restrict the filetypes to documents for your application.
@@ -51,7 +51,8 @@ void Scenario3::PickFolderButton_Click(Object^ sender, RoutedEventArgs^ e)
     {
         if (folder)
         {
-            OutputTextBlock->Text = "Picked folder: " + folder->Name;
+			//OutputTextBlock->Text = "Suggested Start Location: " + folderPicker->SuggestedStartLocation;
+			OutputTextBlock->Text = "Picked folder: " + folder->Name;
         }
         else
         {
